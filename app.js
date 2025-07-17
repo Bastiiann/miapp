@@ -17,8 +17,17 @@ eliminar.addEventListener("click", (e) => {
     });
 });
 function editar(e){
+    const parrafo = e.parentElement.querySelector("p:nth-child(2)")
+    parrafo.contenteditable = true;
+    e.value = "guardar";
 
+    if (parrafo.contenteditable){
+    parrafo.contenteditable = false;
+    }
+    if(e.value =="guardar"){
+        e.value = "editar";
+    }
 }
 function eliminar (e) {
-e.parentElemen.remove();
+e.parentElement.remove();
 }
